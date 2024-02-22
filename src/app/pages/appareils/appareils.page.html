@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des appareils</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-button *ngFor="let appar of appareilList; let i = index" (click)="onLoadAppareil(i)" expand="full">
+      <ion-icon name="power" [color]="appar.isOn ? 'secondary': 'danger'"></ion-icon>
+        {{ appar.name }}
+    </ion-button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <p>Bas de page</p>
+</ion-footer>
+
